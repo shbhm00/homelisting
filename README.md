@@ -27,13 +27,13 @@ The app uses local JSON files for:
 1.  Clone the repository:
 
 ```bash
-git clone https://github.com/shbhm00/findHome_expo.git
+https://github.com/shbhm00/homelisting.git
 ```
 
 2.  Navigate to the project directory:
 
 ```bash
-cd findHome
+cd homeapp
 ```
 
 3.  Install dependencies:
