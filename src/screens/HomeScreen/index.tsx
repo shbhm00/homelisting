@@ -38,6 +38,7 @@ const HomeScreen: React.FC = () => {
     </View>
   );
 
+  // eslint-disable-next-line react/no-unstable-nested-components
   const ItemSeparator = () => <View style={styles.itemSeparator} />;
 
   return (

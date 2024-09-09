@@ -1,80 +1,87 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+##  Real Estate Home Unlocker
 
-# Getting Started
+This React Native application allows real estate companies to remotely unlock homes for potential buyers to view. It showcases state management, API integration, and the use of native device features like location services.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+* **Note:-**I have added console log("User current location") to get the user coords and update mock data latitude and longitude of any index to test the lock and unlock feature.
 
-## Step 1: Start the Metro Server
+** Features**
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+* **User Authentication:** Simple login to authenticate users.
+* **Home List:** Displays a list of homes fetched from a mock API, each showing basic information like address, image, and description.
+* **Home Details:** Detailed view of a selected home, with an "Unlock" button based on user proximity (within 30m).
+* **Unlock Functionality:** Simulates unlocking a home based on location. Displays a success or error message after the API call.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+** Task Requirements**
 
-```bash
-# using npm
-npm start
+* Basic UI/UX: The app focuses on functionality with a simple and clean user interface.
 
-# OR using Yarn
-yarn start
-```
+** Mock API**
 
-## Step 2: Start your Application
+The app uses local JSON files for:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+* Fetching the list of homes.
+* Simulating the API call for unlocking a home.
 
-### For Android
+** Installation & Setup**
 
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
+1.  Clone the repository:
 
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+git clone https://github.com/shbhm00/findHome_expo.git
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+2.  Navigate to the project directory:
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```bash
+cd findHome
+```
 
-## Step 3: Modifying your App
+3.  Install dependencies:
 
-Now that you have successfully run the app, let's modify it.
+```bash
+npm install
+```
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+4.  Run the app:
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+**React Native CLI:**
 
-## Congratulations! :tada:
+```bash
+npx react-native run-android   # For Android
+npx react-native run-ios       # For iOS
+```
 
-You've successfully run and modified your React Native App. :partying_face:
+**Important:** Ensure your device has location services enabled to test the unlock feature.
 
-### Now what?
+** Mock API Setup**
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+The app uses local JSON files stored in the `scr/mockData/` folder for API responses. These include:
 
-# Troubleshooting
+* `homeProjects.json`: Contains the list of homes with their details.
+* Unlock API responses are handled directly in the button logic.
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+** Folder Structure**
 
-# Learn More
+```
+.
+├── src                   # Main source code
+│   ├── assets            # Fonts and images
+│   ├── components        # Reusable UI components
+│   ├── constants         # Colors
+│   ├── mockdata          # API mock json
+│   └── mixins            # Responsive dimensions for height, width and fonts.
+│   └── screens           # Contains screen such as Home & Detail
+│   └── navigation        # Contains routename as well as navigation setup
+└── app/_layout.tsx       # Entry point of the app
+```
 
-To learn more about React Native, take a look at the following resources:
+** Key Technologies**
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-# homelisting
+* React Native
+* Geo Location package
+* @react-navigation
+* Mock JSON data for API simulation
+
+** License**
+
+This project is licensed under the MIT License.

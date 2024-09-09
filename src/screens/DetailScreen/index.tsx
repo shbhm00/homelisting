@@ -9,12 +9,12 @@ import {useNavigation} from '@react-navigation/native';
 
 // Define types for the params
 interface Params {
-  image?: string;
-  address?: string;
-  description?: string;
-  id?: number;
-  latitude?: number;
-  longitude?: number;
+  image: string;
+  address: string;
+  description: string;
+  id: number;
+  latitude: number;
+  longitude: number;
 }
 
 interface Location {
@@ -22,16 +22,18 @@ interface Location {
   longitude: number;
 }
 
+
+
 const DetailScreen: React.FC = ({route}: any) => {
   const params = route.params.homeData as Params;
   const navigation = useNavigation();
-  const [userLocation, setUserLocation] = useState<Location | null>(null);
+  const [, setUserLocation] = useState<Location | null>(null);
   const [canUnlock, setCanUnlock] = useState<boolean>(false);
   const [locked, setLocked] = useState<boolean>(true);
 
   // Calculate if user location is within range
   const isWithinRange = (
-    // eslint-disable-next-line @typescript-eslint/no-shadow
+
     userLocation: Location,
     homeLocation: Location,
   ): boolean => {
@@ -53,7 +55,7 @@ const DetailScreen: React.FC = ({route}: any) => {
       if (result === RESULTS.GRANTED) {
         getLocation();
       } else {
-        Alert('Permission Denied');
+        Alert.alert('Permission Denied');
       }
     } catch (error) {
       console.error('Error requesting permission:', error);
@@ -68,8 +70,10 @@ const DetailScreen: React.FC = ({route}: any) => {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
           };
+          console.log('User current location',userCoords);
+
           setUserLocation(userCoords);
-          const homeCoords = {
+          const homeCoords:Location = {
             latitude: params.latitude,
             longitude: params.longitude,
           };

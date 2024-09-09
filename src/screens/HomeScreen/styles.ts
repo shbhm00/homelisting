@@ -22,8 +22,7 @@ export const styles = StyleSheet.create({
   homeImage: {
     height: 150,
     width: WINDOW_WIDTH - normalizeWidth(40),
-    borderTopLeftRadius: normalize(5),
-    borderTopRightRadius: normalize(5),
+    borderRadius:normalize(4),
   },
   homeAddress: {
     fontSize: normalizeFont(16),
@@ -42,6 +41,8 @@ export const styles = StyleSheet.create({
     paddingHorizontal: normalizeWidth(10),
     width: '100%',
     backgroundColor: '#091E38E5',
+    borderBottomLeftRadius: normalize(4),
+    borderBottomRightRadius:normalize(4),
   },
   itemSeparator: {
     marginVertical: normalizeHeight(10),
